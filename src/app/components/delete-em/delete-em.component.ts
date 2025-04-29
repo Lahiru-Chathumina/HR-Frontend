@@ -8,15 +8,22 @@ import { Component } from '@angular/core';
   styleUrl: './delete-em.component.css'
 })
 export class DeleteEmComponent {
+  selectedId: any;
 
-  constructor(private http:HttpClient){
+  constructor(private http: HttpClient) {}
 
+  setDeleteId(id: any) {
+    this.selectedId = id;
   }
- 
- 
-   confirmDelete(id:any){
-       this.http.delete(`http://localhost:8080/Staff/delete/${id}`).subscribe(data=>{
- 
-       })
- }
+
+  confirmDelete() {
+    if (!this.selectedId) return;
+
+    this.http.delete(`http://localhost:8080/Staff/delete/${this.selectedId}`).subscribe({
+      next: () => {
+        console.log('Customer deleted');
+      },
+      error: err => console.error('Delete failed:', err)
+    });
+  }
 }
