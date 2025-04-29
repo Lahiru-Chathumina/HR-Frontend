@@ -23,10 +23,10 @@ public emlist:any =[]
 
    
 
-   deleteEm(id:any){
-    this.http.delete(`http://localhost:8080/Sttaf/delete/${id}`).subscribe(data=>{
-
-    })
-   }
-
+   deleteEm(id: any) {
+    this.http.delete(`http://localhost:8080/Staff/delete/${id}`).subscribe(() => {
+      this.loardEmpy();
+    });
+  }
+  
 }
