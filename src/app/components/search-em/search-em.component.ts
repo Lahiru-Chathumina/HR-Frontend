@@ -10,12 +10,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchEmComponent {
 
-  searchId: string = '';
+  searchTerm: string = '';
 
  constructor(private http:HttpClient) {}
 
   onSearch(): void {
-    const apiUrl = `http://localhost:8080/Staff/search-by-id/${this.searchId}`;
+    const apiUrl = `http://localhost:8080/Staff/search-by-id/${this.searchTerm}`;
     this.http.get(apiUrl).subscribe({
       next: (data) => {
         console.log('Search result:', data);
