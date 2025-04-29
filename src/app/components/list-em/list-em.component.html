@@ -10,6 +10,8 @@
         <th scope="col" class="px-6 py-3">Email</th>
         <th scope="col" class="px-6 py-3">Address</th>
         <th scope="col" class="px-6 py-3">Salary</th>
+        <th scope="col" class="px-6 py-3">delete</th>
+
       </tr>
     </thead>
     <tbody>
@@ -20,7 +22,7 @@
         <td class="px-6 py-4">{{ em.email }}</td>
         <td class="px-6 py-4">{{ em.address }}</td>
         <td class="px-6 py-4">{{ em.salary }}</td>
-        <td  class="px-6 py-4" (click)="deleteEm(em.id)">Update</td>
+        <td  class="px-6 py-4" (click)="deleteEm(em.id)">delete</td>
 
 
       </tr>
